@@ -1,0 +1,347 @@
+//PT-BR Version starts on line 176
+
+//English version
+Simple Calculator
+
+What does it do?
+It performs the basics opearation of any calculator as sum, subtract, mutiplication, division and percentage
+
+Step-by-Step
+Create two classes: Calculator and Main
+In Calculator class I am going to add the calculators settings and operations
+in Main class, I am goint to print all of these information
+
+Note 1: I tried to translate all the variables I used in PT-BR, so maybe I could forgot some variable in PT-BR and the code maybe can not run accordingly
+so I ask you to revise before run
+
+Code:
+
+Class Calculator: 
+import java.util.Scanner;
+
+public class Calculator { 
+
+// Programming logic: 
+// Calculator with an option menu with 5 operation;
+// First we need to define the variable that will be informed on menu: n1 (# 1), n2 (# 2), res (result);
+// As next, we are going to apply the switch/do formula and use scanner function to select the option and variables;
+
+// Creating the variables - We are goint to use double to do each operation with .00 numbers and a string to define a character;
+double n1; 
+double n2; 
+double res; 
+double mydouble = 0;
+
+// Constructor to declare the variables; 
+public Calculator(double n1, double n2, double res) { 
+this.n1 = n1; 
+this.n2 = n2; 
+this.res = res; 
+this.mydouble = mydouble; 
+}	 
+
+//Option menu  
+void ShowMenu() { 
+char option = '\0'; 
+Scanner scanner = new Scanner(System.in); 
+System.out.println(); 
+System.out.println("Calculator is on: "); 
+System.out.println(); 
+System.out.println("A. Sum"); 
+System.out.println("B. Subtract"); 
+System.out.println("C. Multiplication"); 
+System.out.println("D. Division"); 
+System.out.println("E. Percentage"); 
+System.out.println("F. Power Off"); 
+System.out.println(); 
+
+// Function that allow the user to choose the option and the operation to be done, here we apply switch and do;
+do { 
+System.out.println("Choose the operation: "); 
+char option1 = scanner.next().charAt(0); 
+option = Character.toUpperCase(option1); 
+System.out.println(); 
+double mydouble = res; 
+
+switch(option) { 
+
+//Letra A, Sum:		 
+case 'A': 
+System.out.println("Number 1: "); 
+n1 = scanner.nextDouble(); 
+System.out.println("Number 2: "); 
+n2 = scanner.nextDouble(); 
+res = n1 + n2; 
+
+System.out.println("====================="); 
+System.out.println("Result = "+res); 
+System.out.println("====================="); 
+System.out.println(); 
+
+break; 
+
+//Letra B, Subtract
+case 'B': 
+System.out.println("Number 1: "); 
+n1 = scanner.nextDouble(); 
+System.out.println("Number 2: "); 
+n2 = scanner.nextDouble(); 
+res = n1 - n2; 
+System.out.println("====================="); 
+System.out.println("Result = "+res); 
+System.out.println("======================"); 
+System.out.println(); 
+
+break; 
+
+//Letra C, Multiplication 
+case 'C': 
+System.out.println("Number 1: "); 
+n1 = scanner.nextDouble(); 
+System.out.println("Number 2: "); 
+n2 = scanner.nextDouble(); 
+res = n1 * n2; 
+
+System.out.println("======================"); 
+System.out.println("Result = "+res); 
+System.out.println("======================="); 
+System.out.println(); 
+
+break; 
+
+//Letra D, Divisão 
+case 'D': 
+System.out.println("Number 1: "); 
+n1 = scanner.nextDouble(); 
+System.out.println("Number 2: "); 
+n2 = scanner.nextDouble(); 
+res = n1 / n2; 
+System.out.println("======================="); 
+
+// As double is a variable that shows many numbers after dot, I applied %.4f to show only 4 digits after dot;
+System.out.printf("Resultado = %.4f", mydouble); 
+System.out.println(); 
+System.out.println("======================="); 
+System.out.println(); 
+
+break; 
+
+//Letra E, Percentage 
+case 'E': 
+System.out.println("Number 1: "); 
+n1 = scanner.nextDouble(); 
+System.out.println("Number 2: "); 
+n2 = scanner.nextDouble(); 
+res = (n1 / n2)*100; 
+System.out.println("======================="); 
+
+// As double is a variable that shows many numbers after dot, I applied %.4f to show only 4 digits after dot;
+System.out.printf("Resultado = %.4f", mydouble); 
+System.out.print(" %"); 
+System.out.println(); 
+System.out.println("======================="); 
+System.out.println(); 
+
+break;			 
+
+//Letra F, power off the calculator 
+case 'F':	 
+System.out.println("======================="); 
+break; 
+
+// Default function avoid user to press a diferent option and generate an error
+default: 
+System.out.println("Invalid option, choose A, B, C, D, E or F"); 
+
+break; 
+} 
+} 
+
+while (opcao !='F'); 
+System.out.println("Calculator is off"); 
+System.out.println("======================="); 
+}	 
+} 
+
+***Class Main*** 
+
+import java.util.Scanner; 
+public class Main { 
+public static void main(String[] args) { 
+Calculator calculator = new Calculator(0, 0, 0); 
+calculadora.ShowMeny();	 
+} 
+}
+
+//Versão PT-BR
+Calculadora simples 
+O que faz? 
+5 operações básicas: somar, subtrair, multiplicar, dividir e porcentagem
+
+Passo a passo: 
+Criar duas class: Calculadora e Main 
+Na class Calculadora, vou inserir as configurações da calculadora, operações etc 
+Na class Main, vou imprimir essas informações 
+Códigos: 
+
+Class Calculadora: 
+import java.util.Scanner;
+
+public class Calculadora { 
+
+// Lógica de programação: 
+// Calculadora com menu mostrando quatro operações; 
+// Primeiro precisamos definir as variáveis que serão informadas no menu: n1 (número 1), n2 (número 2), res (Resultado); 
+// Logo após, vamos aplicar a fórmula switch e do e utilizar o scanner para entrarmos com as opções e variáveis; 
+
+//Criando as variáveis - Vamos utilizar double para termos a quebra do zero e uma string para definir um caractere; 
+
+double n1; 
+double n2; 
+double res; 
+double mydouble = 0; 
+
+//Construtor da calculadora para declarar as variáveis; 
+
+public Calculadora(double n1, double n2, double res) { 
+this.n1 = n1; 
+this.n2 = n2; 
+this.res = res; 
+this.mydouble = mydouble; 
+}	 
+
+//Criaremos o menu de opções 
+void MostrarMenu() { 
+char opcao = '\0'; 
+Scanner scanner = new Scanner(System.in); 
+System.out.println(); 
+System.out.println("Calculadora ta on: "); 
+System.out.println(); 
+System.out.println("A. Soma"); 
+System.out.println("B. Subtração"); 
+System.out.println("C. Multiplicação"); 
+System.out.println("D. Divisão"); 
+System.out.println("E. Porcentagem"); 
+System.out.println("F. Encerrar"); 
+System.out.println(); 
+
+//Escolha da opção e função a ser realizada, aqui aplicaremos o switch e o do;	 
+
+do { 
+System.out.println("Insira a opção: "); 
+char opcao1 = scanner.next().charAt(0); 
+opcao = Character.toUpperCase(opcao1); 
+System.out.println(); 
+double mydouble = res; 
+
+switch(opcao) { 
+
+//Letra A, Soma:		 
+case 'A': 
+System.out.println("Valor 1: "); 
+n1 = scanner.nextDouble(); 
+System.out.println("Valor 2: "); 
+n2 = scanner.nextDouble(); 
+res = n1 + n2; 
+
+System.out.println("====================="); 
+System.out.println("Resultado = "+res); 
+System.out.println("====================="); 
+System.out.println(); 
+
+break; 
+
+//Letra B, Subtração 
+case 'B': 
+System.out.println("Valor 1: "); 
+n1 = scanner.nextDouble(); 
+System.out.println("Valor 2: "); 
+n2 = scanner.nextDouble(); 
+res = n1 - n2; 
+System.out.println("====================="); 
+System.out.println("Resultado= "+res); 
+System.out.println("======================"); 
+System.out.println(); 
+
+break; 
+
+//Letra C, Multiplicação 
+case 'C': 
+System.out.println("Valor 1: "); 
+n1 = scanner.nextDouble(); 
+System.out.println("Valor 2: "); 
+n2 = scanner.nextDouble(); 
+res = n1 * n2; 
+
+System.out.println("======================"); 
+System.out.println("Resultado= "+res); 
+System.out.println("======================="); 
+System.out.println(); 
+
+break; 
+
+//Letra D, Divisão 
+case 'D': 
+System.out.println("Valor 1: "); 
+n1 = scanner.nextDouble(); 
+System.out.println("Valor 2: "); 
+n2 = scanner.nextDouble(); 
+res = n1 / n2; 
+System.out.println("======================="); 
+
+//Apliquei um printf method para limitar a quantidade de caracteres após a vírgula 
+
+System.out.printf("Resultado = %.4f", mydouble); 
+System.out.println(); 
+System.out.println("======================="); 
+System.out.println(); 
+
+break; 
+
+//Letra E, Porcentagem 
+case 'E': 
+System.out.println("Valor 1: "); 
+n1 = scanner.nextDouble(); 
+System.out.println("Valor 2: "); 
+n2 = scanner.nextDouble(); 
+res = (n1 / n2)*100; 
+System.out.println("======================="); 
+
+//Apliquei um printf method para limitar a quantidade de caracteres após a vírgula 
+
+System.out.printf("Resultado = %.4f", mydouble); 
+System.out.print(" %"); 
+System.out.println(); 
+System.out.println("======================="); 
+System.out.println(); 
+
+break;			 
+
+//Letra F, encerra a calculadora 
+case 'F':	 
+System.out.println("======================="); 
+break; 
+
+//Default -> Caso uma opção diferente seja informada 
+default: 
+System.out.println("Opção inválida, selecione A, B, C, D, E ou F"); 
+
+break; 
+} 
+} 
+
+while (opcao !='F'); 
+System.out.println("Calculadora Encerrada"); 
+System.out.println("======================="); 
+}	 
+} 
+
+***Class Main*** 
+
+import java.util.Scanner; 
+public class Main { 
+public static void main(String[] args) { 
+Calculadora calculadora = new Calculadora(0, 0, 0); 
+calculadora.MostrarMenu();	 
+} 
+} 
